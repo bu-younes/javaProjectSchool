@@ -1,5 +1,8 @@
 
+import java.io.*;
+import java.util.Stack;
 import java.util.ArrayList;
+import java.util.Scanner;
 import java.util.List;
 import java.util.Scanner;
 
@@ -8,21 +11,67 @@ public class Test6 {
 	public static void main(String[] args) {
 
 		// TODO Auto-generated method stub
+		
+		
+		
+	// changing the integer to a string and add them together
+		System.out.println("===========adding integer and string================");
+		int num1 = 5;
+	    int num2 = 6;
+		Integer totalsum = num1 + num2 ;
+		String e = Integer.toString(totalsum);
+		
+		
+		String name= "Ali " + totalsum ;
+		System.out.println("the name and number is "+name);
+		
+	    System.out.println("===================================================\n\n");
+		
+		
+		
 
 		boolean departmentBoolean = true ;
 		boolean teacherBoolean = true ;
 		boolean studentBoolean = true ;
 		boolean courseBoolean = true ;
+		boolean i = true ;
+
 		ArrayList<Department> departmentList = new ArrayList<Department>();
 		Scanner scanner = new Scanner(System.in);
 		Scanner moon = new Scanner(System.in).useDelimiter("\n");
+		Mark mark1 = new Mark();
+
+        Stack<String> historylist = new Stack<>();
 
 
+        
+        
+        
+        
+        while(i) {
+			School school1 = new School();
+			System.out.println("============shcool program================");
+			System.out.println("welcome to object chaining system");
+			System.out.println("Select 1 to Enter the program");
+			System.out.println("Select 2 to exit from the program ");
+			System.out.println("Select 3 to get the History and to get a .txt file");
+			System.out.println("Select 4 to have fixed constractor ");
+			System.out.println("Select 5 to have constractor Enterd by the user");
+        
+        
+        
+        
+        
+        
+        
+        
 		
-		School school1 = new School();
-		System.out.println("........welcome to school system.........");
+			int select = scanner.nextInt();
+			String selectt = Integer.toString(select);
+			historylist.push(selectt);
+			if (select == 1) {
 		System.out.print("Enter Name Of School: ");
-		school1.setNameOfSchool(scanner.nextLine());
+		school1.setNameOfSchool(scanner.next());
 		System.out.print("Enter Id Of School : ");
 		school1.setIdOfSchool(scanner.nextInt());
 		
@@ -32,10 +81,14 @@ public class Test6 {
 			
 			Department department1 = new Department();
 			System.out.print(" Enter Name Of Department : ");
-			department1.setNameOfDepartment(scanner.next());
+			String nameOfDepartment = scanner.next();
+			department1.setNameOfDepartment(nameOfDepartment);
+			historylist.push(nameOfDepartment);			
 			System.out.print(" Enter Number Of Floors : ");
-			department1.setNumberOfFloors(scanner.nextInt());
-
+			int numberOfFloors = scanner.nextInt();
+			String numberOfFloorss = Integer.toString(numberOfFloors);
+			historylist.push(numberOfFloorss);
+			department1.setNumberOfFloors(numberOfFloors);
 			
 			
 			
@@ -43,10 +96,14 @@ public class Test6 {
 				
 				Teacher teacher1 = new Teacher();
 				System.out.print(" Enter Teacher Name : ");
-				teacher1.setTeacherName(scanner.next());
+				String teacherName = scanner.next();
+				teacher1.setTeacherName(teacherName);
+				historylist.push(teacherName);				
 				System.out.print(" Enter Teacher Id : ");
-				teacher1.setTeacherId(scanner.nextInt());
-				
+				int teacherId = scanner.nextInt();
+				teacher1.setTeacherId(teacherId);
+				String teacherIdd = Integer.toString(teacherId);
+				historylist.push(teacherIdd);				
 				
 				
 				
@@ -56,10 +113,15 @@ public class Test6 {
 					
 					Student student1 = new Student();
 					System.out.print(" Enter Student Name : ");
-					student1.setStudentName(scanner.next());
-					System.out.print(" Enter Student Age : ");
-					student1.setStudentAge(scanner.nextInt());
+					String studentName = scanner.next();
+					student1.setStudentName(studentName);
+					historylist.push(studentName);					
 					
+					System.out.print(" Enter Student Age : ");
+					int studentAge = scanner.nextInt();
+					student1.setStudentAge(studentAge);
+					String studentAgee = Integer.toString(studentAge);
+					historylist.push(studentAgee);					
 					
 					
 					
@@ -67,12 +129,21 @@ public class Test6 {
 						
 						Course course1 = new Course();
 						System.out.print(" Enter Course Subject : ");
-						course1.setCourseSubject(scanner.next());
-						System.out.print(" Enter Course Id : ");
-						course1.setCourseId(scanner.nextInt());
-						System.out.print(" Enter Mark Of Course : ");
-						course1.mark1.setMarkOfCourse(scanner.nextInt());
+						String courseSubject = scanner.next();
+						course1.setCourseSubject(courseSubject);
+						historylist.push(courseSubject);						
 						
+						System.out.print(" Enter Course Id : ");
+						int courseId = scanner.nextInt();
+						course1.setCourseId(courseId);
+						String courseIdd = Integer.toString(courseId);
+						historylist.push(courseIdd);						
+						
+						System.out.print(" Enter Mark Of Course : ");
+						int markOfCourse = scanner.nextInt();
+						mark1.setMarkOfCourse(markOfCourse);
+						String markOfCoursee = Integer.toString(markOfCourse);
+						historylist.push(markOfCoursee);						
 						
 						
 						
@@ -117,51 +188,104 @@ public class Test6 {
 			departmentBoolean = true;
 			if(scanner.nextInt()!= 1) {
 				departmentBoolean = false;
-		
 				
+				
+				
+				
+				//printing
 			
-			
-			
-
-			
-			
-			
-			
-			
-			//printing
-			
-			System.out.println("(((((((((((( School Info ))))))))))))");
-			System.out.println(">> School name is :" + school1.getNameOfSchool());
-			System.out.println(">> School id is :" + school1.getIdOfSchool());
-			
-			    System.out.println("(((((((((((( Departments Info ))))))))))))");
-            for(Department department :departmentList) {
-               System.out.println("Department name is: " + department.getNameOfDepartment()+" ");
-               System.out.println("Department floor is: " + department.getNumberOfFloors());
-            for(Teacher teacher :department.teacherList) {
-        		System.out.println("(((((((((((( Teacher Info ))))))))))))");
-        		System.out.println(">> Teacher name is : " + teacher.getTeacherName());
-        		System.out.println(">> Teacher id is : :" + teacher.getTeacherId());
-        	for(Student student : teacher.studentList) {
-        		System.out.println("(((((((((((( Student Info ))))))))))))");
-        		System.out.println(">> Student name is : " +  student.getStudentName());
-        		System.out.println(">> Student age is : :" + student.getStudentAge());
-        	for(Course course : student.courseList) {
-        		System.out.println(">> Course subject is : " +  course.getCourseSubject());
-        		System.out.println(">> Course id is : :" + course.getCourseId());
-        		System.out.println(">> Mark Of Course Is: :" + course.mark1.getMarkOfCourse());
-			}//for course	
-			}//for student
-			}//for teacher
-			
-            }//for department
-			
+				System.out.println("(((((((((((( School Info ))))))))))))");
+				System.out.println(">> School name is :" + school1.getNameOfSchool());
+				System.out.println(">> School id is :" + school1.getIdOfSchool());
+				
+				    System.out.println("(((((((((((( Departments Info ))))))))))))");
+	            for(Department department :departmentList) {
+	               System.out.println("Department name is: " + department.getNameOfDepartment()+" ");
+	               System.out.println("Department floor is: " + department.getNumberOfFloors());
+	            for(Teacher teacher :department.teacherList) {
+	        		System.out.println("(((((((((((( Teacher Info ))))))))))))");
+	        		System.out.println(">> Teacher name is : " + teacher.getTeacherName());
+	        		System.out.println(">> Teacher id is : :" + teacher.getTeacherId());
+	        	for(Student student : teacher.studentList) {
+	        		System.out.println("(((((((((((( Student Info ))))))))))))");
+	        		System.out.println(">> Student name is : " +  student.getStudentName());
+	        		System.out.println(">> Student age is : :" + student.getStudentAge());
+	        	for(Course course : student.courseList) {
+	        		System.out.println(">> Course subject is : " +  course.getCourseSubject());
+	        		System.out.println(">> Course id is : :" + course.getCourseId());
+	        		System.out.println(">> Mark Of Course Is: :" + mark1.getMarkOfCourse());
+				}//for course	
+				}//for student
+				}//for teacher
+				
+	            }//for department
+		
 			}
+			
+				}
+			
 		}//department while
 		
-		
-		}}
+		//if school
+        
+			 else if (select == 3)
+				{
+					System.out.println("the input history is ");
+					for (String v : historylist)
+					{
+						System.out.println(v);
+					}
+					
+					try {
+						
+						BufferedWriter writer = new BufferedWriter(new FileWriter("output.txt"));
+						writer.write("\nthis is your history list ");
+						for (String v : historylist) {
+							writer.write("\n"+v);
+						}
+						writer.close();
+						}catch (IOException o) {
+							o.printStackTrace();
+						}
+					
+					
+				}
+				else if (select ==2 )
+				{
+					i = false ;
+					System.out.println("the program is closed");
+				}
+				else if (select == 4)
+				{
+					System.out.println("=======constractor==============");
+					Farm f = new Farm(" majid ","hisham ","adnan");
+					
+					System.out.println("============constractor program================");
+				}
+				else if (select == 5)
+				{
+					// constructer with user input
+					Scanner sr = new Scanner(System.in);
+					System.out.println("Enter the Animal name");
+					String animal=sr.next();
+					System.out.println("Enter the Animal age");
+					int animalage=sr.nextInt();
+				    Animal o = new Animal(animal,animalage);
+				    System.out.println("===================================================\n\n");
+				}
+				else if (select == 6)
+				{
+					
+					
+				}
+				}//while school
+				scanner.close();
+				
+				
+        }
+        }
 
+			
 
 
 
