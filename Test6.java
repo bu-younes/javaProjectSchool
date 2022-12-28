@@ -14,8 +14,7 @@ public class Test6 {
 		
 		
 		
-	// changing the integer to a string and add them together
-		System.out.println("===========adding integer and string================");
+		System.out.println("-_-_-_-_-_-_-_-adding integer and string-_-_-_-_-_-_-_-");
 		int num1 = 5;
 	    int num2 = 6;
 		Integer totalsum = num1 + num2 ;
@@ -23,9 +22,9 @@ public class Test6 {
 		
 		
 		String name= "Ali " + totalsum ;
-		System.out.println("the name and number is "+name);
+		System.out.println("              the name and number is "+name);
 		
-	    System.out.println("===================================================\n\n");
+	    System.out.println("-_-_-_-_-_--_-_-_-_-_-_-_--_-_-_-_-_-_-_--_-_-_-_-_-_-_-\n\n");
 		
 		
 		
@@ -50,7 +49,7 @@ public class Test6 {
         
         while(i) {
 			School school1 = new School();
-			System.out.println("============shcool program================");
+			System.out.println("============Shcool System================");
 			System.out.println("welcome to object chaining system");
 			System.out.println("Select 1 to Enter the program");
 			System.out.println("Select 2 to exit from the program ");
