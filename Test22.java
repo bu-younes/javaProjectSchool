@@ -1,5 +1,10 @@
 import java.util.Scanner;
-
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.OutputStream;
+import com.itextpdf.text.Document;
+import com.itextpdf.text.Paragraph;
+import com.itextpdf.text.pdf.PdfWriter;
 public class Test22 {
 
 		 
@@ -7,76 +12,34 @@ public class Test22 {
    public static void main(String[] args)
    {
  
-
-	   Scanner Sc = new Scanner(System.in);
-	   boolean menu= true;
 	   
-	   while(menu){
-	   System.out.println("1.Enter shop details");
-	   System.out.println("2.Enter product details");
-	   System.out.println("3.Enter item details");
-	   System.out.println("4.History");
-	   System.out.println("5.Exit");
-	   System.out.println("6.Display product");
-	   System.out.println("7.Remove duplicate product name");
-	   int input = Sc.nextInt();
-	   if (input == 1) {
-	   System.out.println("shop details");
-	   }
-	   else if(input==2){
-		   menu = true;
-	   System.out.println("product details");
-	   }
-	   else if(input==3){
-		   menu =true;
-		   System.out.println("item details");
-		   }
-	   else if(input==4){
-		   menu = true;
-		   System.out.println("History");
-		   }
-	   else if(input==5){
-		   menu = false;
-		   System.out.println("Exit");
-		   }
-	   else if(input==6){
-		   menu = true;
-		   System.out.println("Display product");
-		   }
-	   else if(input==7){
-		   menu = true;
-		   System.out.println("duplicate product name");
-		   }
-	   else {
-	   System.out.println("wrong choice");
-	  
-	   }
-	   }
-  
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
-   
+	   
+	   try { 
+		   
+	       	//Create Document instance.
+		Document document = new Document();
+	 
+		//Create OutputStream instance.
+		OutputStream outputStream = 
+			new FileOutputStream(new File("D:\\TestFile.pdf"));
+	 
+		//Create PDFWriter instance.
+	        PdfWriter.getInstance(document, outputStream);
+	 
+	        //Open the document.
+	        document.open();
+	 
+	        //Add content to the document.
+	        document.add(new Paragraph("Hello world, " +
+	       	"this is a test pdf file."));
+	 
+	        //Close document and outputStream.
+	        document.close();
+	        outputStream.close();
+	 
+	        System.out.println("Pdf created successfully.");
+	    } catch (Exception e) {
+		e.printStackTrace();
+	    }
+
    }}
-
-
-
-	   // Creating an empty Stack
-      /*   Stack<String> stackStr = new Stack<String>();
-	  	String name = scanner.nextLine();
-		school1.setNameOfSchool(name);
-		stackparee.push(name);*/

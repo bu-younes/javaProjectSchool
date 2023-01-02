@@ -8,11 +8,15 @@ import java.util.Scanner;
 
 public class Test6 {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Throwable {
 
 		// TODO Auto-generated method stub
 		
-		
+		 // Creating demo's object
+        Finalize d = new Finalize();
+ 
+        // Calling finalize of demo
+        d.finalize();
 		
 		System.out.println("-_-_-_-_-_-_-_-adding integer and string-_-_-_-_-_-_-_-");
 		int num1 = 5;
