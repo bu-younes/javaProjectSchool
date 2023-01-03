@@ -1,8 +1,9 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-class Course {
+class Course implements Serializable {
 	Mark mark1 = new Mark();
 
 	
@@ -13,7 +14,7 @@ class Course {
 		public void setMarkList(List<Mark> markList) {
 			this.markList = markList;
 		}
-	Scanner scanner = new Scanner(System.in);
+		transient	Scanner scanner = new Scanner(System.in);
 	
 	
 	private String courseSubject;

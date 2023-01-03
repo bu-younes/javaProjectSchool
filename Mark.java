@@ -1,11 +1,12 @@
+import java.io.Serializable;
 import java.util.Scanner;
 
-class Mark {
+class Mark implements Serializable{
 	
   private int markOfCourse;
   
   
-	Scanner scanner = new Scanner(System.in);
+  transient	Scanner scanner = new Scanner(System.in);
 
 
 	public int getMarkOfCourse() {

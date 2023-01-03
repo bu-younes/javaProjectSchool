@@ -1,7 +1,10 @@
+
+
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-class Department {
+public class Department implements Serializable {
 	Teacher teacher1 = new Teacher();
 
 	
@@ -12,7 +15,7 @@ class Department {
 		public void setTeacherList(ArrayList<Teacher> teacherList) {
 			this.teacherList = teacherList;
 		}
-	Scanner scanner = new Scanner(System.in);
+transient	Scanner scanner = new Scanner(System.in);
 	
 	private String nameOfDepartment;
 	public String getNameOfDepartment() {

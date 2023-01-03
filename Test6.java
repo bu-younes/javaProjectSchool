@@ -31,7 +31,8 @@ public class Test6 {
 	    System.out.println("-_-_-_-_-_--_-_-_-_-_-_-_--_-_-_-_-_-_-_--_-_-_-_-_-_-_-\n\n");
 		
 		
-		
+		 
+	    
 
 		boolean departmentBoolean = true ;
 		boolean teacherBoolean = true ;

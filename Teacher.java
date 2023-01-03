@@ -1,8 +1,9 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-class Teacher {
+class Teacher implements Serializable {
 	Student student1 = new Student();
 
 
@@ -13,7 +14,7 @@ class Teacher {
 		public void setStudentList(List<Student> studentList) {
 			this.studentList = studentList;
 		}
-	Scanner scanner = new Scanner(System.in);
+transient	Scanner scanner = new Scanner(System.in);
 
 	
 	

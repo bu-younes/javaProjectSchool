@@ -1,9 +1,10 @@
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
 
-class Student {
+class Student implements Interface, Serializable{
 	Course course1 = new Course();
 
 	
@@ -14,7 +15,7 @@ class Student {
 	public void setCourseList(List<Course> courseList) {
 		this.courseList = courseList;
 	}
-	Scanner scanner = new Scanner(System.in);
+	transient	Scanner scanner = new Scanner(System.in);
 	
 	
 	 private String studentName;
@@ -33,7 +34,10 @@ class Student {
 	private	int studentAge;
 
 	
+	public void age() {
 		
+		
+	}
 
 
 		
