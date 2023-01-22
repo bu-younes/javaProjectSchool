@@ -18,7 +18,7 @@ public class Test6 {
         // Calling finalize of demo
         d.finalize();
 		
-		System.out.println("-_-_-_-_-_-_-_-adding integer and string-_-_-_-_-_-_-_-");
+        System.out.println("-_-_-_-_-_-_-_-adding integer and string-_-_-_-_-_-_-_-");
 		int num1 = 5;
 	    int num2 = 6;
 		Integer totalsum = num1 + num2 ;
@@ -45,14 +45,14 @@ public class Test6 {
 		Scanner moon = new Scanner(System.in).useDelimiter("\n");
 		Mark mark1 = new Mark();
 
-        Stack<String> historylist = new Stack<>();
+       Stack<String> historylist = new Stack<>();
 
 
-        
-        
-        
-        
-        while(i) {
+       
+       
+       
+       
+       while(i) {
 			School school1 = new School();
 			System.out.println("============Shcool System================");
 			System.out.println("welcome to object chaining system");
@@ -61,14 +61,14 @@ public class Test6 {
 			System.out.println("Select 3 to get the History and to get a .txt file");
 			System.out.println("Select 4 to have fixed constractor ");
 			System.out.println("Select 5 to have constractor Enterd by the user");
-        
-        
-        
-        
-        
-        
-        
-        
+       
+       
+       
+       
+       
+       
+       
+       
 		
 			int select = scanner.nextInt();
 			String selectt = Integer.toString(select);
@@ -94,6 +94,50 @@ public class Test6 {
 			historylist.push(numberOfFloorss);
 			department1.setNumberOfFloors(numberOfFloors);
 			
+			try
+			{
+			FileOutputStream file = new FileOutputStream("change1.txt");
+			ObjectOutputStream out = new ObjectOutputStream(file);
+			out.writeObject(department1);
+			out.close();
+			file.close();
+			System.out.println("serialized and saved");
+			
+				
+				
+			}catch (Exception e1) {
+				e1.printStackTrace();
+			}
+			
+			
+			
+			try
+			{
+			FileInputStream file = new FileInputStream("change1.txt");
+			ObjectInputStream in = new ObjectInputStream(file);
+			
+			 Department object1 = (Department) in.readObject();
+			 System.out.println(object1.getNameOfDepartment());
+			 System.out.println(object1.getNumberOfFloors());
+
+			 
+			in.close();
+			file.close();
+			
+			System.out.println("object has been deserialized");
+			System.out.println("Name Of Department:" + object1.getNameOfDepartment());
+			System.out.println("Number Of Floors:" + object1.getNumberOfFloors());
+			
+			   }
+		    catch(IOException ex)
+		    {
+		        System.out.println("IOException is caught");
+		    }
+		    catch(ClassNotFoundException ex)
+		    {
+		        System.out.println("ClassNotFoundException is caught");
+			}
+			
 			
 			
 			while(teacherBoolean) {
@@ -109,6 +153,50 @@ public class Test6 {
 				String teacherIdd = Integer.toString(teacherId);
 				historylist.push(teacherIdd);				
 				
+				
+				
+				try
+				{
+				FileOutputStream file = new FileOutputStream("change2.txt");
+				ObjectOutputStream out = new ObjectOutputStream(file);
+				out.writeObject(teacher1);
+				out.close();
+				file.close();
+				System.out.println("serialized and saved");
+				
+					
+					
+				}catch (Exception e1) {
+					e1.printStackTrace();
+				}
+				
+				
+				
+				try
+				{
+				FileInputStream file = new FileInputStream("change2.txt");
+				ObjectInputStream in = new ObjectInputStream(file);
+				
+				 Teacher object1 = (Teacher) in.readObject();
+				 System.out.println(object1.getTeacherName());
+				 System.out.println(object1.getTeacherId());
+
+				in.close();
+				file.close();
+				
+				System.out.println("object has been deserialized");
+				System.out.println("Teacher Name:" + object1.getTeacherName());
+				System.out.println("Teacher Id:" + object1.getTeacherId());
+				
+				   }
+			    catch(IOException ex)
+			    {
+			        System.out.println("IOException is caught");
+			    }
+			    catch(ClassNotFoundException ex)
+			    {
+			        System.out.println("ClassNotFoundException is caught");
+				}
 				
 				
 				
@@ -127,6 +215,49 @@ public class Test6 {
 					String studentAgee = Integer.toString(studentAge);
 					historylist.push(studentAgee);					
 					
+					
+					try
+					{
+					FileOutputStream file = new FileOutputStream("change3.txt");
+					ObjectOutputStream out = new ObjectOutputStream(file);
+					out.writeObject(student1);
+					out.close();
+					file.close();
+					System.out.println("serialized and saved");
+					
+						
+						
+					}catch (Exception e1) {
+						e1.printStackTrace();
+					}
+					
+					
+					
+					try
+					{
+					FileInputStream file = new FileInputStream("change3.txt");
+					ObjectInputStream in = new ObjectInputStream(file);
+					
+					 Student object1 = ( Student) in.readObject();
+					 System.out.println(object1.getStudentName());
+					 System.out.println(object1.getStudentAge());
+
+					in.close();
+					file.close();
+					
+					System.out.println("object has been deserialized");
+					System.out.println("student name:" + object1.getStudentName());
+					System.out.println("student age:" + object1.getStudentAge());
+					
+					   }
+				    catch(IOException ex)
+				    {
+				        System.out.println("IOException is caught");
+				    }
+				    catch(ClassNotFoundException ex)
+				    {
+				        System.out.println("ClassNotFoundException is caught");
+					}
 					
 					
 					while(courseBoolean) {
@@ -150,7 +281,50 @@ public class Test6 {
 						historylist.push(markOfCoursee);						
 						
 						
+						try
+						{
+						FileOutputStream file = new FileOutputStream("change4.txt");
+						ObjectOutputStream out = new ObjectOutputStream(file);
+						out.writeObject(course1);
+						out.close();
+						file.close();
+						System.out.println("serialized and saved");
 						
+							
+							
+						}catch (Exception e1) {
+							e1.printStackTrace();
+						}
+						
+						
+						
+						try
+						{
+						FileInputStream file = new FileInputStream("change4.txt");
+						ObjectInputStream in = new ObjectInputStream(file);
+						
+						 Course object1 = (Course) in.readObject();
+						 System.out.println(object1.getCourseSubject());
+						 System.out.println(object1.getCourseId());
+						 System.out.println(object1.getMarkList());
+
+						in.close();
+						file.close();
+						
+						System.out.println("object has been deserialized");
+						System.out.println("Course Subject:" + object1.getCourseSubject());
+						System.out.println("Course Id:" + object1.getCourseId());
+						System.out.println("Mark List:" + object1.getMarkList());
+
+						   }
+					    catch(IOException ex)
+					    {
+					        System.out.println("IOException is caught");
+					    }
+					    catch(ClassNotFoundException ex)
+					    {
+					        System.out.println("ClassNotFoundException is caught");
+						}
 						
 						
 						
@@ -231,7 +405,7 @@ public class Test6 {
 		}//department while
 		
 		//if school
-        
+       
 			 else if (select == 3)
 				{
 					System.out.println("the input history is ");
@@ -286,10 +460,11 @@ public class Test6 {
 				scanner.close();
 				
 				
-        }
-        }
+       }
+       }
 
 			
+
 
 
 
